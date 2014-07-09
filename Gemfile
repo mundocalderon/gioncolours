@@ -40,4 +40,15 @@ gem 'spring',        group: :development
 
 gem 'therubyracer'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails', :branch => "bootstrap3"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => 'bootstrap3'
+
+#gems for bootsy WYSIWYG editor
+gem 'rmagick', :require => 'RMagick'
+gem 'bootsy'
+gem 'carrierwave'
+
+#gem to include attr_accessible method
+gem 'protected_attributes'
+
+#simplying form building
+gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form' 

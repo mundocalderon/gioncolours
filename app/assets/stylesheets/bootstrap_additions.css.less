@@ -1,6 +1,6 @@
 // This bit is to push down body content so that the navbar isn't cutting it off
 body {
-  padding-top: 40px;
+  padding-top: 55px;
 }
 
 @media (max-width: 979px) {
@@ -8,7 +8,6 @@ body {
     padding-top: 0px;
   }
 }
-//
 
 // css-trick that forces embedded videos to be responsive
 .video-container {
@@ -28,4 +27,14 @@ body {
 	width: 100%;
 	height: 100%;
 }
-//
+//centering navbar content
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}

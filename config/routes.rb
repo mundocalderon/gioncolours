@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :announcements
+
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   get 'static_pages/home', as: :home
   get 'static_pages/videos', as: :videos
   get 'static_pages/contact', as: :contact
