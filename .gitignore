@@ -23,3 +23,9 @@ config/secrets.yml
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
+
+*.jpg
+
+*.jpg
+
+public/uploads/announcement/attachment/1/54480001.jpg

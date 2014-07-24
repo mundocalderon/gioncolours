@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702041909) do
+ActiveRecord::Schema.define(version: 20140724042951) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20140702041909) do
   create_table "bootsy_images", force: true do |t|
     t.string   "image_file"
     t.integer  "image_gallery_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gigs", force: true do |t|
+    t.string   "date"
+    t.string   "venue"
+    t.string   "location"
+    t.text     "details"
+    t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,54 @@
+<%- model_class = Gig -%>
+
+<div class="container">
+	<div class="row">
+    	<div class="col-md-12">
+			
+			<div class="page-header">
+			  <h1>Shows</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+    	<div class="col-md-12">
+			
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th><%= model_class.human_attribute_name(:date) %></th>
+			      <th><%= model_class.human_attribute_name(:venue) %></th>
+			      <th><%= model_class.human_attribute_name(:location) %></th>
+			      <th><%= model_class.human_attribute_name(:details) %></th>
+			      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <% @gigs.each do |gig| %>
+			      <tr>
+			        <td><%= gig.date %></td>
+			        <td><%= if !gig.link.blank? then link_to gig.venue,gig.link else gig.venue end %></td>
+			        <td><%= gig.location %></td>
+			        <td><%= gig.details %></td>
+			        <td>
+			          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+			                      edit_gig_path(gig), :class => 'btn btn-default btn-xs' %>
+			          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+			                      gig_path(gig),
+			                      :method => :delete,
+			                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+			                      :class => 'btn btn-xs btn-danger' %>
+			        </td>
+			      </tr>
+			    <% end %>
+			  </tbody>
+			</table>
+
+			<%= link_to t('.new', :default => t("helpers.links.new")),
+			            new_gig_path,
+			            :class => 'btn btn-primary' %>
+		</div>
+	</div>
+</div>

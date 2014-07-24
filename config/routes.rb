@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :gigs
+
   resources :announcements
 
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
