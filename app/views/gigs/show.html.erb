@@ -21,7 +21,7 @@
 			  <dt><strong><%= model_class.human_attribute_name(:details) %>:</strong></dt>
 			  <dd><%= @gig.details %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:link) %>:</strong></dt>
-			  <dd><%= @gig.link %></dd>
+			  <dd><%= link_to @gig.venue, url_with_protocol(@gig.link), :target => :blank %></dd>
 			</dl>
 
 			<%= link_to t('.back', :default => t("helpers.links.back")),

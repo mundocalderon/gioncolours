@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724042951) do
+ActiveRecord::Schema.define(version: 20140725073014) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 20140724042951) do
     t.string   "location"
     t.text     "details"
     t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "tour_id"
+  end
+
+  create_table "tours", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "date_begin"
+    t.string   "date_end"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
