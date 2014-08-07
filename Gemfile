@@ -60,3 +60,10 @@ gem 'bootstrap-datepicker-rails'
 
 #Tour model and Gig Model management
 gem "nested_form"
+
+#Gems for Heroku usage
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+  
+end
