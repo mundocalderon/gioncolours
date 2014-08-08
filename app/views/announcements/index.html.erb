@@ -15,7 +15,7 @@
     	<div class="col-md-12">	
 		<% @announcements.each do |announcement| %>
 			<div class="announcement-thumbnail">
-				<%= image_tag announcement.attachment, :class => "announcement-img" %>
+				<%= image_tag announcement.attachment.url, :class => "announcement-img" %>
 				<div class="overlay">
 					<h1 class="text-overlay"><%= link_to announcement.title, announcement %></h1>
 				</div>

@@ -12,7 +12,7 @@
 			<p class="pull-right"><small> this was news on: <%= @announcement.post_date %></small></p>
 			
 			<div class="announcement-attachment">
-				<%= image_tag @announcement.attachment, :class => "img-responsive center-block" %>
+				<%= image_tag @announcement.attachment.url, :class => "img-responsive center-block" %>
 			</div>
 			<br>
 			<hr>
