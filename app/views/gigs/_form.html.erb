@@ -25,6 +25,7 @@
 
 	  <%= f.input :details, input_html:{ rows:'10' } %>
 	  <%= f.input :link, :hint => "Add link to Venue's Website or to Ticket Vendor." %>
+	  <%= f.association :gig_types, as: :check_boxes %>
 
 	  <%= f.button :submit, :class => 'btn-primary' %>
 	  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

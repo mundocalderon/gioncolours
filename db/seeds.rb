@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+GigType.create(title: "Joel Gion")
+GigType.create(title: "The Primary Colours")
+
+AnnouncementType.create(title: "Joel Gion")
+AnnouncementType.create(title: "The Primary Colours")
+
+VideoType.create(title: "Joel Gion")
+VideoType.create(title: "The Primary Colours")

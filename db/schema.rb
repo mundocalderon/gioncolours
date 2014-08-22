@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725073014) do
+ActiveRecord::Schema.define(version: 20140821221351) do
+
+  create_table "announcement_types", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "announcement_types_announcements", force: true do |t|
+    t.integer  "announcement_type_id"
+    t.integer  "announcement_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -36,6 +49,19 @@ ActiveRecord::Schema.define(version: 20140725073014) do
     t.datetime "updated_at"
   end
 
+  create_table "gig_types", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gig_types_gigs", force: true do |t|
+    t.integer  "gig_type_id"
+    t.integer  "gig_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "gigs", force: true do |t|
     t.string   "date"
     t.string   "venue"
@@ -52,6 +78,34 @@ ActiveRecord::Schema.define(version: 20140725073014) do
     t.text     "description"
     t.string   "date_begin"
     t.string   "date_end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "video_types", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "video_types_videos", force: true do |t|
+    t.integer  "video_type_id"
+    t.integer  "video_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "videos", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "video_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

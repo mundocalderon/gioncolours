@@ -1,5 +1,6 @@
 class GigsController < ApplicationController
   before_action :set_gig, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   # GET /gigs
   # GET /gigs.json
@@ -69,6 +70,6 @@ class GigsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gig_params
-      params.require(:gig).permit(:date, :venue, :location, :details, :link)
+      params.require(:gig).permit(:date, :venue, :location, :details, :link, {:gig_type_ids => []} )
     end
 end

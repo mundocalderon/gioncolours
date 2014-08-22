@@ -1,5 +1,6 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   # GET /announcements
   # GET /announcements.json
@@ -69,6 +70,6 @@ class AnnouncementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def announcement_params
-      params.require(:announcement).permit(:title, :content, :post_date, :attachment)
+      params.require(:announcement).permit(:title, :content, :post_date, :attachment, {:announcement_type_ids => []} )
     end
 end

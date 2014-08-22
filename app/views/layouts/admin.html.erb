@@ -37,40 +37,10 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
+
+
    <%= bootstrap_flash %>
-
-    <div class="navbar navbar-default navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-			  <li><a class="navbar-brand" href="#">Joel Gion & The Primary Colours</a></li>
-			  <% if current_user %>
-	              <li><%= link_to "Home", home_path  %></li>
-	              <li><%= link_to "Announcements", announcements_path  %></li>
-				  <li><%= link_to "Tours", tours_path %>
-				  <li><%= link_to "Shows", gigs_path %></li>
-		          <li><%= link_to "Videos", videos_path  %></li>
-		          <li><%= link_to "Contact", contact_path  %></li>
-			  <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-
    <%= yield %>
-
-	<div class="container">
-		<hr>
-	    <footer>
-	      <p class="pull-right">&copy; <%= link_to "Dookie", login_path unless current_user %> <%= link_to "Dookie", logout_path if current_user %> 2014</p>
-	    </footer>
-		
-	</div>
 
 
   </body>

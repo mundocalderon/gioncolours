@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :videos
+
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  
+  resources :users
+  resources :sessions
+
   resources :tours
 
   resources :gigs
@@ -6,8 +15,8 @@ Rails.application.routes.draw do
   resources :announcements
 
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
-  get 'static_pages/home', as: :home
-  get 'static_pages/videos', as: :videos
+  get 'static_pages/home', as: :home #url => /static_pages/home
+  get 'vids', to: 'static_pages#vids', as: :vids #url => /vids
   get 'static_pages/contact', as: :contact
 
   # The priority is based upon order of creation: first created -> highest priority.

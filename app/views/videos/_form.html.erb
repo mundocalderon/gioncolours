@@ -1,6 +1,5 @@
-
 <div class='col-md-8'>
-	<%= simple_form_for @announcement,
+	<%= simple_form_for @video,
 	wrapper_mappings: {
 	  check_boxes: :vertical_radio_and_checkboxes,
 	  radio_buttons: :vertical_radio_and_checkboxes,
@@ -10,20 +9,11 @@
 
 	      <%= f.input :title %>
 
-	      <%= f.input :content, as: :bootsy, :class => 'form-control textarea', input_html:{ rows:'20' } %>
+	      <%= f.input :description, as: :bootsy, :class => 'form-control textarea', input_html:{ rows:'20' } %>
  
-		<div class="row">
-			 <div class="col-sm-4">
-				  <%= f.input :post_date %>
-		  	 </div>
-			 <div class="col-xs-8">
-		   
-			 </div>
-	  	</div>
+		  <%= f.association :video_types, as: :check_boxes %>
 
-	      <%= f.input :attachment %>
-		  
-		  <%= f.association :announcement_types, as: :check_boxes%>
+	      <%= f.input :video_url %>
 
 
   
