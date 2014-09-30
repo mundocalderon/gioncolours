@@ -8,7 +8,7 @@
 	} do |f| %>
 	<div class="row">
 		 <div class="col-xs-4">
-			  <%= f.input :date %>
+			  <%= f.input :date, :as => :string, input_html:{ class:'ui-datepicker' }%>
 	  	 </div>
 		 <div class="col-xs-8">
 			   

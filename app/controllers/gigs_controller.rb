@@ -1,11 +1,11 @@
 class GigsController < ApplicationController
   before_action :set_gig, only: [:show, :edit, :update, :destroy]
-  before_filter :authorize
+  before_filter :authorize, except: [:show]
 
   # GET /gigs
   # GET /gigs.json
   def index
-    @gigs = Gig.all
+    @gigs = Gig.where("date >= ?",Date.today).sort_by &:date
   end
 
   # GET /gigs/1

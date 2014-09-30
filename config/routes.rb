@@ -1,28 +1,27 @@
 Rails.application.routes.draw do
-  resources :videos
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   
+  get 'admin_home', to: 'static_pages#admin_home', as: :admin_home #url => /static_pages/home
+  get 'home', to: 'static_pages#home', as: :home
+  get 'joel', to: 'static_pages#joel', as: :joel
+  get 'tpc', to: 'static_pages#tpc', as: :tpc
+  
+  get 'vids', to: 'static_pages#vids', as: :vids #url => /vids
+  get 'contact', to: 'static_pages#contact', as: :contact
+
+  resources :videos
   resources :users
   resources :sessions
-
   resources :tours
-
   resources :gigs
-
   resources :announcements
 
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
-  get 'static_pages/home', as: :home #url => /static_pages/home
-  get 'vids', to: 'static_pages#vids', as: :vids #url => /vids
-  get 'static_pages/contact', as: :contact
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
   root 'static_pages#home'
 
   # Example of regular route:

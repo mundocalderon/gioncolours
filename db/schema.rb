@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821221351) do
+ActiveRecord::Schema.define(version: 20140905024906) do
 
   create_table "announcement_types", force: true do |t|
     t.string   "title"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140821221351) do
   create_table "announcements", force: true do |t|
     t.string   "title"
     t.text     "content"
-    t.string   "post_date"
+    t.date     "post_date"
     t.string   "attachment"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20140821221351) do
   end
 
   create_table "gigs", force: true do |t|
-    t.string   "date"
+    t.date     "date"
     t.string   "venue"
     t.string   "location"
     t.text     "details"

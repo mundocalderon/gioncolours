@@ -14,8 +14,8 @@
 			  <dd><%= @video.description %></dd>
 			  <dt><strong>Video Category:</strong></dt>
 			  <dd><%= @video.video_types.map{ |t| t.title }.join(", ") %></dd>
-			  <dt><strong><%= model_class.human_attribute_name(:video_url) %>:</strong></dt>
-			  <dd><%= @video.video_url %></dd>
+			  <dt><strong>Video:</strong></dt>
+			  <dd><iframe width="640" height="480" src="//www.youtube.com/embed/<%= youtube_id(@video.video_url) %>" frameborder="0" allowfullscreen></iframe></dd>
 			</dl>
 
 			<%= link_to t('.back', :default => t("helpers.links.back")),

@@ -27,7 +27,7 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="col-xs-3">
-								<%= g.input :date %>
+								<%= g.input :date, :as => :string, input_html:{ class:'ui-datepicker' } %>
 							</div>
 							<div class="col-xs-3 col-md-offset-1">
 								<%= g.input :venue, label:"Venue Name" %>

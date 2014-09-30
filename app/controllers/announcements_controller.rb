@@ -1,11 +1,11 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
-  before_filter :authorize
+  before_filter :authorize, except: [:show]
 
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = Announcement.all
+    @announcements = Announcement.all.reverse
   end
 
   # GET /announcements/1

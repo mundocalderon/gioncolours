@@ -1,2 +1,2 @@
 $(document).ready ->
-  $("#gig_date").datepicker()
+  $("#gig_date").datepicker format:"yyyy-mm-dd"
