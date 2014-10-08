@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   
   get 'admin_home', to: 'static_pages#admin_home', as: :admin_home #url => /static_pages/home
+  get 'alt_home', to: 'static_pages#alt_home'
   get 'home', to: 'static_pages#home', as: :home
   get 'joel', to: 'static_pages#joel', as: :joel
   get 'tpc', to: 'static_pages#tpc', as: :tpc
