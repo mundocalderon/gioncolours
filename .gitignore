@@ -30,3 +30,5 @@ config/secrets.yml
 
 public/uploads/announcement/attachment/1/54480001.jpg
 /config/initializers/environment_variables.rb
+
+*.xcf

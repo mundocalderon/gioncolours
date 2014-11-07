@@ -5,7 +5,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = Announcement.all.reverse
+    @announcements = Announcement.all.order('post_date desc')
   end
 
   # GET /announcements/1
