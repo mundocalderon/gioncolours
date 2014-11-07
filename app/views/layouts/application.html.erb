@@ -65,15 +65,14 @@
 
 	<div class="container">
 	    <footer>
-			<hr>
 			  <% if current_user %>
-	          <p><%= link_to "Home", admin_home_path  %> - 
-	          <%= link_to "Announcements", announcements_path  %> - 
-			  <%= link_to "Shows", gigs_path %> -
-	          <%= link_to "Videos", videos_path  %> - 
-	          <%= link_to "Contact", contact_path  %></p>
+		          <p><%= link_to "Home", admin_home_path  %> - 
+		          <%= link_to "Announcements", announcements_path  %> - 
+				  <%= link_to "Shows", gigs_path %> -
+		          <%= link_to "Videos", videos_path  %> - 
+		          <%= link_to "Contact", contact_path  %>
 			  <% end %>
-	      <p class="pull-right">&copy; <%= link_to "Dookie", login_path unless current_user %> <%= link_to "Dookie", logout_path if current_user %> 2014</p>
+	      <span class="pull-right">&copy; <%= link_to "Dookie", login_path unless current_user %> <%= link_to "Dookie", logout_path if current_user %> 2014</span></p>
 	    </footer>
 		
 	</div>

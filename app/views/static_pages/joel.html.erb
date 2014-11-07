@@ -7,18 +7,12 @@
 	</div>
 </div-->
 <div class="container">
-	<div class="home-image-center"><img src="/images/joelgion.jpg"></div>
+	<div class="home-image-center"><a href="/"><img class="img-responsive" src="/images/jg_logo.jpg"></a></div>
 </div>
 
 <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<h1>This is Bonkers, Apple.</h1>
-		</div>
-	</div><!--/row-->
-
 	<hr>
-	<h4><em>News</em></h4> <!--------- News ---------->
+	<span class="glyphicon glyphicon-comment"></span> <!-- NEWS -->
 	<div class="row">
 		<div class="col-xs-4">	
 			<div class="announcement-thumbnail">
@@ -74,11 +68,11 @@
 	</div><!--/row /news -->
 	
 	<hr>
-	<h4><em>Shows</em></h4> <!---------- Shows -------->
+	<span class="glyphicon glyphicon-calendar"></span> <!-- SHOWS -->
 	<div class="row">
     	<div class="col-md-12">
 			
-			<table class="table table-striped">
+			<table class="table table-bordered">
 			  <thead>
 			    <tr>
 			      <th>Date </th>
@@ -104,13 +98,17 @@
 	</div><!--/row /shows -->
 	
 	<hr>
-	<h4><em>Videos</em></h4> <!--------- Videos ---------->
+	<span class="glyphicon glyphicon-film"></span> <!-- VIDEOS -->
 	<% @videos.each do |vid| %>
 	<div class="row">
-		<div class="video-container">
-			<iframe src="https://www.youtube.com/embed/<%= youtube_id(vid.video_url) %>" frameborder="0" allowfullscreen></iframe>
+		<div class="col-xs-12">
+			<div class="video-container">
+				<iframe src="https://www.youtube.com/embed/<%= youtube_id(vid.video_url) %>" frameborder="0" allowfullscreen></iframe>
+			</div>
 		</div>
-		
+	</div>
+	
+	<div class="row">
 	    <div class="col-xs-12">
 			  <h1><%= vid.title %></h1>
 			  <p><%= vid.description%></p>
@@ -121,7 +119,30 @@
 	<!-- /Videos -->
 	
 	<hr>
-	<h4><em>Contact</em></h4>
+	<span class="glyphicon glyphicon-shopping-cart"></span> <!-- STORE -->
+		<div class="row">
+			<div class="col-xs-2">
+				<div class="store-img"><%= link_to (image_tag "apple_bonkers.jpg", :class => "img-responsive"), "http://goingion.tictail.com/product/joel-gion-7-overthrow-night-of-the-living-deadbeats" %></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="store-img"><%= link_to (image_tag "apple_bonkers.jpg", :class => "img-responsive"), "http://goingion.tictail.com/product/joel-gion-7-overthrow-night-of-the-living-deadbeats" %></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="store-img"><%= link_to (image_tag "apple_bonkers.jpg", :class => "img-responsive"), "http://goingion.tictail.com/product/joel-gion-7-overthrow-night-of-the-living-deadbeats" %></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="store-img"><%= link_to (image_tag "apple_bonkers.jpg", :class => "img-responsive"), "http://goingion.tictail.com/product/joel-gion-7-overthrow-night-of-the-living-deadbeats" %></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="store-img"><%= link_to (image_tag "apple_bonkers.jpg", :class => "img-responsive"), "http://goingion.tictail.com/product/joel-gion-7-overthrow-night-of-the-living-deadbeats" %></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="store-img"><%= link_to (image_tag "apple_bonkers.jpg", :class => "img-responsive"), "http://goingion.tictail.com/product/joel-gion-7-overthrow-night-of-the-living-deadbeats" %></div>
+			</div>
+		</div>
+		<!-- /STORE -->
+		
+	<hr>
     <div class="row">
       <div class="col-md-12">
   		<address>
