@@ -39,10 +39,10 @@
 	</div><!--/row /news -->
 	
 	<hr>
-	<!--h4><em>Shows</em></h4> <!- Shows -->
+	<span class="glyphicon glyphicon-calendar"></span> <!-- SHOWS -->
 	<div class="row">
     	<div class="col-md-12">
-			
+
 			<table class="table table-bordered">
 			  <thead>
 			    <tr>
@@ -53,18 +53,24 @@
 				  
 			    </tr>
 			  </thead>
-			  <tbody>
-			    <% @gigs.each do |gig| %>
-			      <tr>
-			        <td class="col-xs-2"><%= link_to gig.date.strftime("%m/%d/%Y"), gig %></td>
-			        <td class="col-xs-2"><%= gig.location %></td>
-			        <td class="col-xs-2"><%= if !gig.link.blank? then link_to gig.venue,url_with_protocol(gig.link), :target => :blank else gig.venue end %></td>
-			        <td class="col-xs-6"><%= gig.details %> <%= if gig.with_tpc? then image_tag "/images/swirl-icon.png", :class => "responsive-img" end %> </td>
+			  	<% if !@gigs.empty? %>
+			  	<tbody>
+				    <% @gigs.each do |gig| %>
+				      <tr>
+				        <td class="col-xs-2"><%= link_to gig.date.strftime("%m/%d/%Y"), gig %></td>
+				        <td class="col-xs-2"><%= gig.location %></td>
+				        <td class="col-xs-2"><%= if !gig.link.blank? then link_to gig.venue,url_with_protocol(gig.link), :target => :blank else gig.venue end %></td>
+				        <td class="col-xs-6"><%= gig.details %> <%= if gig.with_tpc? then image_tag "/images/swirl-icon.png", :class => "responsive-img" end %> </td>
 					
-			      </tr>
-			    <% end %>
+				      </tr>
+				    <% end %>
 			  </tbody>
+
 			</table>
+		  <% else %>
+		  </table>
+		  <p>No Upcoming Dates</p>
+		  <% end %>
 		</div>
 	</div><!--/row /shows -->
 	
@@ -82,7 +88,7 @@
 	<div class="row">	
 	    <div class="col-xs-12">
 			  <h1><%= vid.title %></h1>
-			  <p><%= vid.description%></p>
+			  <p><%=raw vid.description%></p>
 		</div>
 	</div>
 	

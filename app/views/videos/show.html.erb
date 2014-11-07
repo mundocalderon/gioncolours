@@ -11,7 +11,7 @@
 			  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
 			  <dd><%= @video.title %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-			  <dd><%= @video.description %></dd>
+			  <dd><%=raw @video.description %></dd>
 			  <dt><strong>Video Category:</strong></dt>
 			  <dd><%= @video.video_types.map{ |t| t.title }.join(", ") %></dd>
 			  <dt><strong>Video:</strong></dt>
