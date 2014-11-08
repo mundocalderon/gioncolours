@@ -12,30 +12,16 @@
 <div class="container">
 	<hr>
 	<div class="row">
-		<div class="col-xs-4">	
+		<% @announcements.each do |announcement| %>
+    	<div class="col-xs-4">	
 			<div class="announcement-thumbnail">
-				<%= link_to (image_tag @announcements[0].attachment.url(:thumb), :class => "announcement-img img-responsive"), @announcements[0] %>
+				<%= link_to (image_tag announcement.attachment.url(:thumb), :class => "announcement-img img-responsive"), announcement %>
 				<div class="img-title">
-					<h5><%= link_to @announcements[0].title, @announcements[0] %></h5>
+					<h5><%= link_to announcement.title, announcement %></h5>
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-4">	
-			<div class="announcement-thumbnail">
-				<%= link_to (image_tag @announcements[1].attachment.url(:thumb), :class => "announcement-img img-responsive"), @announcements[1] %>
-				<div class="img-title">
-					<h5><%= link_to @announcements[1].title, @announcements[1] %></h5>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-4">	
-			<div class="announcement-thumbnail">
-				<%= link_to (image_tag @announcements[2].attachment.url(:thumb), :class => "announcement-img img-responsive"), @announcements[2] %>
-				<div class="img-title">
-					<h5><%= link_to @announcements[2].title, @announcements[2] %></h5>
-				</div>
-			</div>
-		</div>
+		<% end %>
 	</div><!--/row /news -->
 	
 	<hr>
